@@ -16,7 +16,7 @@ import java.net.URI;
 
 @Service
 public class FaceDetectService {
-    private static final String subscriptionKey = "71b92edebf19453ab3cbf9a1ed2f04a1";
+    private static final String subscriptionKey = "<klucz xD>";
     private static final String uriBase =
             "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
 
