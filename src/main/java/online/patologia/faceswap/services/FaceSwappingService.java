@@ -95,7 +95,9 @@ public class FaceSwappingService {
         });
         fourth.start();
 
-        Thread.sleep(6000);
+        while(fourth.isAlive()) {
+            
+        }
 
 
         return "/downloadFile/" + sourceURI;
