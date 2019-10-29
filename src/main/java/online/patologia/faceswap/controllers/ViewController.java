@@ -14,25 +14,15 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 @Controller
 public class ViewController {
     @Autowired
-    private FileStorageService fileStorageService;
-    @Autowired
     private FaceSwappingService faceSwappingService;
 
     @GetMapping("/")
-    public String showPage(Model model) {
-
+    public String showPage() {
         return "index";
-
     }
 
     @PostMapping("/")
     public String showResult(@RequestParam("file") MultipartFile file,Model model) throws InterruptedException{
-       // String name = fileStorageService.storeFile(file);
-
-//        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-//                .path("/downloadFile/")
-//                .path(name)
-//                .toUriString();
         String respond = faceSwappingService.swapFace(file);
         System.out.println("respond");
         model.addAttribute("download",respond);
